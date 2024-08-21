@@ -1,0 +1,198 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(207, 227, 247);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensure content flows vertically */
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+header {
+    background-color: royalblue;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for separation */
+}
+
+.top-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.logo {
+    width: 20vw;
+    max-width: 250px; /* Set a max width to avoid excessive scaling */
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    font-size: large;
+}
+
+nav a:hover {
+    background-color: rgb(3, 30, 111);
+    border-radius: 5px;
+}
+
+/* Section Styles */
+.middle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 60vw;
+    max-width: 1200px; /* Ensure it doesn't exceed container width */
+    margin: 20px auto; /* Center align section */
+    align-items: center;
+    justify-content: center;
+}
+
+.middle-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.rows{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+}
+.indexSubmitButton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    max-width: 100px;
+}
+
+.indexSubmitButton:hover {
+    background-color: #0056b3;
+}
+
+.rows input, .rows select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.section-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #004080;
+    text-transform: uppercase;
+}
+
+/* Container Styles */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto; /* Center align container */
+}
+
+h1 {
+    text-align: center;
+    color: #002366; /* Royal blue */
+}
+
+/* Semester and Form Styles */
+.semester {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #002366; /* Royal blue */
+    margin-bottom: 10px;
+}
+
+.courseContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+/* Button Styles */
+button {
+    background-color: #002366; /* Royal blue */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0044cc; /* Lighter blue for hover effect */
+}
+
+/* Result Styles */
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #002366; /* Royal blue */
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.name_here{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: royalblue;
+}
+
+.marquee-1{
+    background-color: antiquewhite;
+    
+}
