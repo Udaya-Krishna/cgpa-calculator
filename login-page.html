@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        body {
+            margin-top: 40vh;
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .nav-bar {
+            width: 100%;
+            height: 20vh; 
+            background-color: #333; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .nav-bar img {
+            height: 100%; 
+        }
+
+        .full-page {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        .main-section {
+            background-color: royalblue;
+            color: black;
+            height: 330px;
+            width: 300px;
+            padding: 10px;
+            border: 1px solid transparent;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        .main-section p {
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .main-section input {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .password-container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .password-container input {
+            width: 100%;
+            padding-right: 40px; /* Ensures space for the eye icon */
+        }
+
+        .eye-icon {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 18px; /* Adjust the size of the icon */
+            top: 50%;
+            transform: translateY(-50%); /* Vertically centers the icon */
+        }
+
+        .sub-but {
+            background-color: white;
+            color: blue;
+            border-color: grey;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        .sub-but:hover {
+            background-color: rgb(7, 30, 99);
+            color: white;
+            border: 1px solid transparent;
+        }
+
+        sup {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <img src="images/VEC-Logo-Landscape.jpg">
+    </nav>
+    <div class="full-page">
+        <h1>DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING</h1>
+        <form class="main-section" onsubmit="checkPass(event)">
+            <p>Username<sup>*</sup></p>
+            <input type="text" class="u-name" required>
+            <p>Password<sup>*</sup><sub> (*Your passwords will not be stored)</sub></p>
+            <div class="password-container">
+                <input type="password" class="init-pass" required>
+                <span id="toggle-init-pass" class="eye-icon">👁️</span>
+            </div>
+            <p>Confirm password<sup>*</sup></p>
+            <div class="password-container">
+                <input type="password" class="conf-pass" required>
+                <span id="toggle-conf-pass" class="eye-icon">👁️</span>
+            </div>
+            <button type="submit" class="sub-but">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(inputClass, toggleId) {
+            const passwordInput = document.querySelector(inputClass);
+            const togglePassword = document.getElementById(toggleId);
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                this.textContent = type === 'password' ? '👁️' : '👁️‍🗨️';
+            });
+        }
+
+        togglePasswordVisibility('.init-pass', 'toggle-init-pass');
+        togglePasswordVisibility('.conf-pass', 'toggle-conf-pass');
+
+        function checkPass(event) {
+            event.preventDefault(); 
+
+            var userName = document.querySelector('.u-name').value;
+            var password1 = document.querySelector('.init-pass').value;
+            var password2 = document.querySelector('.conf-pass').value;
+
+            if (password1 === password2) {
+                console.log('Passwords match!');
+                window.location.href = "home.html";
+            } else {
+                console.log('Passwords do not match!');
+                alert(`Check the password, ${userName}!`);
+            }
+        }
+    </script>
+</body>
+</html>
